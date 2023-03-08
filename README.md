@@ -2,10 +2,18 @@
 
 Flask Website
 
-#Packages Used
-flask
-flask-login
-flask-sqlalchemy
+## Packages Used
 
-#Run aplication
-python app.py
+
+* flask
+* flask-login
+* flask-sqlalchemy
+
+
+## Run application
+
+```bash
+$ git clone https://github.com/Kumor96/Blog-Flask.git
+$ pip install -r requirements.txt
+$ python app.py
+```
