@@ -1,5 +1,20 @@
 {% extends "base.html" %}
-{% block title}Login Page{% endblock%}
+{% block title %}Login Page{% endblock%}
 {% block content%}
-<h3>Login Page</h3>
+<form method="POST">
+    <h1 align="center">Please log in</h1>
+    <div class="form-floating">
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        <label for="email">Email address</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        <label for="password">Password</label>
+    </div>
+</br>
+        <div align="center">
+            <button class="btn btn-primary" type="submit">Logn in</button>
+        </div>
+    </div>
+</form>
 {% endblock %}
