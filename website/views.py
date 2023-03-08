@@ -38,3 +38,20 @@ def posts(username):
     posts = user.posts
 
     return render_template("posts.html", user=current_user, posts=posts, username=user.username)
+
+@views.route("/delete-post/<post_id>")
+@login_required
+def delete_post(post_id):
+    post = Post.query.get(post_id)
+
+    if post:
+        if post.author != current_user.id:
+            flash("You dont have promise", category='error')
+        else:
+            db.session.delete(post)
+            db.session.commit()
+            flash("Post deleted!",category='success')
+            return redirect(url_for('views.home'))
+    else:
+        flash("Post not found", category='error')
+        return redirect(url_for('views.home'))
