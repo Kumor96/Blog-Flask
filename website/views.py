@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_required, current_user
-from .models import Post
+from .models import Post, User
 from . import db
 
 views = Blueprint("views", __name__)
@@ -27,3 +27,14 @@ def create_post():
             flash("Post created!", category='success')
             return redirect(url_for('views.home'))
     return render_template("create_post.html", user=current_user)
+
+@views.route("/posts/<username>")
+@login_required
+def posts(username):
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        flash("No user with that username", category='error')
+
+    posts = user.posts
+
+    return render_template("posts.html", user=current_user, posts=posts, username=user.username)
