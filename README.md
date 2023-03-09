@@ -1,6 +1,6 @@
 # Blog-Flask
 
-This is a simple web-based blog
+This is a simple blog with the possibility of registering an account, adding posts and comments.
 
 ## Packages Used
 
