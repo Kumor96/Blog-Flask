@@ -1,9 +1,8 @@
 # Blog-Flask
 
-Flask Website
+This is a simple web-based blog
 
 ## Packages Used
-
 
 * flask
 * flask-login
